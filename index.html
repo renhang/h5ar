@@ -3,27 +3,55 @@
 <script src="vendor/aframe/build/aframe.min.js"></script>
 <script src="build/aframe-ar.js"></script>
 <script src="build/three.js"></script>
-<head>
-    <meta charset="UTF-8">
-    <title>ar-test</title>
-</head>
+<!-- start the body of your page -->
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded artoolkit='sourceType: webcam;'>
-         <!--<a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>-->
-        <a-sphere src="vendor/earth_atmos_4096.jpg" radius="0.5" position="0 0.5 0" segments-height="53">
-            <a-animation attribute="scale"
-                         dur="1000"
-                         from="1 1 1"
-                         to="2 2 2"
-                         direction='alternate-reverse'
-                         easing= "ease-in-out-circ"
-                         repeat="indefinite">
-            </a-animation>
-        </a-sphere>
-        <!--<a-marker-camera preset='hiro'></a-marker-camera>-->
-        <a-marker-camera type='pattern' patternUrl='vendor/pattern-marker.patt'></a-marker-camera>
-        <!--&lt;!&ndash; for plain matker &ndash;&gt;-->
-        <!--<a-marker type='pattern' patternUrl='vendor/pattern-marker.patt'></a-marker>-->
-    </a-scene>
+<!-- add some info at the top of the page -->
+<div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+    <a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - tango example for a-frame by <a href='https://twitter.com/jerome_etienne' target='_blank'>@jerome_etienne</a>
+</div>
+
+<!-- Define your 3d scene and enabled ar.js -->
+<a-scene embedded arjs='trackingMethod: best;'>
+
+    <!-- Create a anchor to attach your augmented reality -->
+    <a-anchor hit-testing-enabled='true'>
+
+        <!-- Add your augmented reality here -->
+        <a-box position='0 0.5 0' material='opacity: 0.5; side:double; color:red;'>
+            <a-torus-knot radius='0.26' radius-tubular='0.05'>
+                <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+            </a-torus-knot>
+        </a-box>
+
+    </a-anchor>
+
+    <!-- Define a static camera -->
+    <a-camera-static/>
+
+</a-scene>
 </body>
+
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>ar-test</title>-->
+<!--</head>-->
+<!--<body style='margin : 0px; overflow: hidden;'>-->
+    <!--<a-scene embedded artoolkit='sourceType: webcam;'>-->
+         <!--&lt;!&ndash;<a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>&ndash;&gt;-->
+        <!--<a-sphere src="vendor/earth_atmos_4096.jpg" radius="0.5" position="0 0.5 0" segments-height="53">-->
+            <!--<a-animation attribute="scale"-->
+                         <!--dur="1000"-->
+                         <!--from="1 1 1"-->
+                         <!--to="2 2 2"-->
+                         <!--direction='alternate-reverse'-->
+                         <!--easing= "ease-in-out-circ"-->
+                         <!--repeat="indefinite">-->
+            <!--</a-animation>-->
+        <!--</a-sphere>-->
+        <!--&lt;!&ndash;<a-marker-camera preset='hiro'></a-marker-camera>&ndash;&gt;-->
+        <!--<a-marker-camera type='pattern' patternUrl='vendor/pattern-marker.patt'></a-marker-camera>-->
+        <!--&lt;!&ndash;&lt;!&ndash; for plain matker &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<a-marker type='pattern' patternUrl='vendor/pattern-marker.patt'></a-marker>&ndash;&gt;-->
+    <!--</a-scene>-->
+<!--</body>-->
 </html>
