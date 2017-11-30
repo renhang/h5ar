@@ -8228,6 +8228,7 @@ AFRAME.registerComponent('arjs-anchor', {
 					containerElement.setAttribute('style', 'position: fixed; bottom: 10px; width:100%; text-align: center; z-index: 1; color: grey;')
 					document.body.appendChild(containerElement)
 				}
+
 				// create anchorDebugUI
 				var anchorDebugUI = new ARjs.AnchorDebugUI(arAnchor)
 				containerElement.appendChild(anchorDebugUI.domElement)		

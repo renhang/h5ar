@@ -3,7 +3,7 @@
 <script src="vendor/aframe/build/aframe.min.js"></script>
 <script src="build/aframe-ar.js"></script>
 <script src="build/three.js"></script>
-
+<script src="//cdn.bootcss.com/eruda/1.2.0/eruda.min.js"></script>
 
 <!--&lt;!&ndash; start the body of your page &ndash;&gt;-->
 <!--<body style='margin : 0px; overflow: hidden;'>-->
@@ -58,5 +58,10 @@
         <!--&lt;!&ndash; for plain matker &ndash;&gt;-->
         <!--<a-marker type='pattern' patternUrl='vendor/patt.dsgj'></a-marker>-->
     </a-scene>
+    window.onload = function(){
+    eruda.init({
+    container: el,
+    });
+    }
 </body>
 </html>
